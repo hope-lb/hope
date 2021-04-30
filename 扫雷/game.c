@@ -11,7 +11,7 @@ void menu()
 
 void playgame()
 {
-	printf("ÓÎÏ·¿ªÊ¼");
+	printf("æ¸¸æˆå¼€å§‹");
 	Sleep(650);
 	system("cls");
 }
@@ -59,8 +59,8 @@ void setmine(char board[ROWS][COLS], int mine_num, int row, int col)
 {
 	while (mine_num)
 	{
-		int x = rand() % row + 1;//Éú³ÉËæ»úÊý
-		int y = rand() % col + 1;//Éú³ÉËæ»úÊý
+		int x = rand() % row + 1;//ç”Ÿæˆéšæœºæ•°
+		int y = rand() % col + 1;//ç”Ÿæˆéšæœºæ•°
 		if (board[x][y] == '0')
 		{
 			board[x][y] = '1';
@@ -147,15 +147,15 @@ void play(char mineboard[ROWS][COLS], char showboard[ROWS][COLS], int row, int c
 {
 	int x = 0;
 	int y = 0;
-	int n = 0;//¼ÇÂ¼ÒÑÅÅ³ýµÄ¸ñ×Ó
+	int n = 0;//è®°å½•å·²æŽ’é™¤çš„æ ¼å­
 	
 	while (row * col - MINE_NUM - n)
 	{
-		printf("ÇëÊäÈë×ø±ê£¬ÒÔ¿Õ¸ñ¸ô¿ªÊäÈë>:");
+		printf("è¯·è¾“å…¥åæ ‡ï¼Œä»¥ç©ºæ ¼éš”å¼€è¾“å…¥>:");
 		scanf("%d %d", &x, &y);
 		if (x > ROW || y > COL || x < 1 || y < 1)
 		{
-			printf("×ø±ê·Ç·¨£¬ÇëÖØÐÂÊäÈë\n");
+			printf("åæ ‡éžæ³•ï¼Œè¯·é‡æ–°è¾“å…¥\n");
 			continue;
 		}
 		if (mineboard[x][y] != '1')
@@ -172,7 +172,7 @@ void play(char mineboard[ROWS][COLS], char showboard[ROWS][COLS], int row, int c
 				spread(showboard, mineboard, x, y);
 				
 			}
-			n = Isblank(showboard, row, col);//¼ì²éÒÑ¾­ÓÐ¶àÉÙ¸ñ×ÓÒÑ¾­ÅÅ³ý
+			n = Isblank(showboard, row, col);//æ£€æŸ¥å·²ç»æœ‰å¤šå°‘æ ¼å­å·²ç»æŽ’é™¤
 			system("cls");
 			printboard(showboard, row, col);
 		}
@@ -183,11 +183,12 @@ void play(char mineboard[ROWS][COLS], char showboard[ROWS][COLS], int row, int c
 	}
 	if (row * col - MINE_NUM - n)
 	{
-		printf("ºÜÒÅº¶£¬Äã±»Õ¨ËÀÁË\n");	
+		printf("å¾ˆé—æ†¾ï¼Œä½ è¢«ç‚¸æ­»äº†\n");	
 	}
 	else
 	{
-		printf("¹§Ï²Äã£¬É¨À×³É¹¦\n");
+		printf("æ­å–œä½ ï¼Œæ‰«é›·æˆåŠŸ\n");
 	}
 	printboard(mineboard, row, col);
 }
+ï¼
