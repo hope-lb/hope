@@ -191,4 +191,4 @@ void play(char mineboard[ROWS][COLS], char showboard[ROWS][COLS], int row, int c
 	}
 	printboard(mineboard, row, col);
 }
-！
+
